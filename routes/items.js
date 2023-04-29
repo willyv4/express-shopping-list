@@ -9,7 +9,7 @@ router.get("/items", (req, res, next) => {
     if (allItems.length === 0) {
       throw new ExpressError("no items in cart", 404);
     }
-    return res.json({ items: allItems });
+    return res.status(200).json({ items: allItems });
   } catch (e) {
     return next(e);
   }

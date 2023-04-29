@@ -2,10 +2,8 @@ const express = require("express");
 const app = express();
 const itemsRoutes = require("./routes/items");
 const ExpressError = require("./expressError");
-const morgan = require("morgan");
 
 app.use(express.json());
-app.use(morgan("dev"));
 app.use("/store", itemsRoutes);
 
 app.use((req, res, next) => {
